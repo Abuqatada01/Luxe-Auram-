@@ -1,10 +1,13 @@
 import { useState } from "react";
 import {
-  AiOutlineHome,
-  AiOutlineShopping,
+  AiFillHome,
+  AiFillShopping,
   AiOutlineLogin,
   AiOutlineUserAdd,
-  AiOutlineShoppingCart,
+  AiOutlineLine,
+  AiFillCarryOut,
+  AiFillCreditCard,
+  // AiFillShopping,
 } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -45,30 +48,38 @@ const Navigation = () => {
     <div
       style={{ zIndex: 9999 }}
       className={`${
-        showSidebar ? "hidden" : "flex"
-      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh]  fixed `}
+        showSidebar ? "hidden" : "flex hover:w-[20%]" 
+      } hover::flex bg-[#f1f0f0] lg:hidden md:hidden  text-black  flex-col justify-between top-4 w-[3rem] hover:p-4 h-[2rem]  hover:w-[20%] hover:h-[1000vh]  fixed `}
       id="navigation-container"
     >
-      <div className="flex flex-col justify-center space-y-4">
+      <div className="flex flex-col  justify-center space-y-4">
+        <AiFillCreditCard className="text-2xl mt-1 click:hidden" />
         <Link
           to="/"
-          className="flex items-center transition-transform transform hover:translate-x-2"
+          className="flex text-black font-semibold   items-center transition-transform transform hover:translate-x-2"
         >
-          <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
+          <AiFillHome
+            color=""
+            className="mr-2 border-black mt-[3rem] text-xl"
+            size={26}
+          />
           <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
         </Link>
 
         <Link
           to="/shop"
-          className="flex items-center transition-transform transform hover:translate-x-2"
+          className="flex text-black font-semibold items-center transition-transform transform hover:translate-x-2"
         >
-          <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
+          <AiFillShopping className="mr-2 mt-[3rem]" size={26} />
           <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
         </Link>
 
-        <Link to="/cart" className="flex relative">
+        <Link
+          to="/cart"
+          className="flex relative  text-black font-semibold items-center transition-transform transform hover:translate-x-2 "
+        >
           <div className="flex items-center transition-transform transform hover:translate-x-2">
-            <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
+            <AiFillCarryOut className="mt-[3rem] mr-2" size={26} />
             <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
           </div>
 
@@ -84,7 +95,7 @@ const Navigation = () => {
         </Link>
 
         <Link to="/favorite" className="flex relative">
-          <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
+          <div className="flex text-black font-semibold items-center transition-transform transform hover:translate-x-2">
             <FaHeart className="mt-[3rem] mr-2" size={20} />
             <span className="hidden nav-item-name mt-[3rem]">
               Favorites
@@ -97,10 +108,12 @@ const Navigation = () => {
       <div className="relative">
         <button
           onClick={toggleDropdown}
-          className="flex items-center text-gray-800 focus:outline-none"
+          className="flex items-center text-black focus:outline-none"
         >
           {userInfo ? (
-            <span className="text-white">{userInfo.username}</span>
+            <span className="text-black text-semibold ">
+              {userInfo.username}
+            </span>
           ) : (
             <></>
           )}
@@ -195,16 +208,19 @@ const Navigation = () => {
             <li>
               <Link
                 to="/login"
-                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                className="flex items-center text-black text-semibold mt-5 transition-transform transform hover:translate-x-2"
               >
-                <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
+                <AiOutlineLogin
+                  className="mr-2 text-black mt-[4px]"
+                  size={26}
+                />
                 <span className="hidden nav-item-name">LOGIN</span>
               </Link>
             </li>
             <li>
               <Link
                 to="/register"
-                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                className="flex items-center text-black mt-5 transition-transform transform hover:translate-x-2"
               >
                 <AiOutlineUserAdd size={26} />
                 <span className="hidden nav-item-name">REGISTER</span>

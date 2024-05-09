@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useGetFilteredProductsQuery } from "../redux/api/productApiSlice";
 import { useFetchCategoriesQuery } from "../redux/api/categoryApiSlice";
 
+import { AiFillAccountBook,
+  AiOutlineFilter,
+ } from "react-icons/ai";
 import {
   setCategories,
   setProducts,
@@ -82,10 +85,13 @@ const Shop = () => {
 
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-9">
         <div className="flex md:flex-row">
-          <div className="bg-[#151515] p-3 mt-2 mb-2">
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+          <div className="bg-[#f1f0f0] sm:z-10 sm:absolute sm:right-[27rem] sm:hover:right-[10rem] sm:hover:top-[10rem]  rounded-lg p-3 mt-2 mb-2">
+            <h1 className="md:hidden top-3 lg:hidden sm:absolute h-[2rem] sm:left-[17rem] sm:bg-[#f1f0f0] rounded-lg p-1  w-[4rem] text-canter">
+             &nbsp;Filters 
+            </h1>
+            <h2 className="h4 text-center py-2 text-white bg-green-600 rounded-full mb-2">
               Filter by Categories
             </h2>
 
@@ -102,7 +108,7 @@ const Shop = () => {
 
                     <label
                       htmlFor="pink-checkbox"
-                      className="ml-2 text-sm font-medium text-white dark:text-gray-300"
+                      className="ml-2 text-sm font-medium capitalize text-black dark:text-gray-300"
                     >
                       {c.name}
                     </label>
@@ -111,7 +117,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="h4 text-center py-2 text-white bg-green-600 rounded-full mb-2">
               Filter by Brands
             </h2>
 
@@ -129,7 +135,7 @@ const Shop = () => {
 
                     <label
                       htmlFor="pink-radio"
-                      className="ml-2 text-sm font-medium text-white dark:text-gray-300"
+                      className="ml-2 text-sm font-medium text-black bg-green-600e "
                     >
                       {brand}
                     </label>
@@ -138,7 +144,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+            <h2 className="h4 text-center py-2 text-white bg-green-600 rounded-full mb-2">
               Filer by Price
             </h2>
 
@@ -148,7 +154,7 @@ const Shop = () => {
                 placeholder="Enter Price"
                 value={priceFilter}
                 onChange={handlePriceChange}
-                className="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-pink-300"
+                className="w-full text-black px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-pink-300"
               />
             </div>
 
