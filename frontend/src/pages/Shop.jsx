@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { AiFillAccountBook,
+  AiOutlineFilter,
+ } from "react-icons/ai";
+
+ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetFilteredProductsQuery } from "../redux/api/productApiSlice";
 import { useFetchCategoriesQuery } from "../redux/api/categoryApiSlice";
 
-import { AiFillAccountBook,
-  AiOutlineFilter,
- } from "react-icons/ai";
 import {
   setCategories,
   setProducts,
@@ -87,7 +88,7 @@ const Shop = () => {
     <>
       <div className="container mx-auto mt-9">
         <div className="flex md:flex-row">
-          <div className="bg-[#f1f0f0] sm:z-10 sm:absolute sm:right-[27rem] sm:hover:right-[10rem] sm:hover:top-[10rem]  rounded-lg p-3 mt-2 mb-2">
+          <div className="bg-[#f1f0f0]   rounded-lg p-3 mt-2 mb-2">
             <h1 className="md:hidden top-3 lg:hidden sm:absolute h-[2rem] sm:left-[17rem] sm:bg-[#f1f0f0] rounded-lg p-1  w-[4rem] text-canter">
              &nbsp;Filters 
             </h1>
