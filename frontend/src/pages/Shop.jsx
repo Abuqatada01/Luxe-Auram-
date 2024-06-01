@@ -1,12 +1,20 @@
-import { AiFillAccountBook,
-  AiOutlineFilter,
- } from "react-icons/ai";
+import { AiFillAccountBook, AiOutlineFilter } from "react-icons/ai";
 
- import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetFilteredProductsQuery } from "../redux/api/productApiSlice";
 import { useFetchCategoriesQuery } from "../redux/api/categoryApiSlice";
 
+import React from "react";
+
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import ListItem from "@mui/material/ListItem";
+import { AiFillFilter } from "react-icons/ai";
+
+import { Link } from "react-router-dom";
+import List from "@mui/material/List";
 import {
   setCategories,
   setProducts,
@@ -79,16 +87,25 @@ const Shop = () => {
     ),
   ];
 
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
   const handlePriceChange = (e) => {
     // Update the price filter state when the user types in the input filed
     setPriceFilter(e.target.value);
   };
 
-  return (
-    <>
-      <div className="container mx-auto mt-9">
+
+  const DrawerList = (
+    <Box sx={{ width: 300 }} role="presentation" onClick={toggleDrawer(false)}>
+      <List>
+        <ListItem>
+        /* <div className="container mx-auto mt-9">
         <div className="flex md:flex-row">
-          <div className="bg-[#f1f0f0]   rounded-lg p-3 mt-2 mb-2">
+          <div className="bg-[#f1f0f0]   rounded-lg p-1 mt-2 mb-2">
             <h1 className="md:hidden top-3 lg:hidden sm:absolute h-[2rem] sm:left-[17rem] sm:bg-[#f1f0f0] rounded-lg p-1  w-[4rem] text-canter">
              &nbsp;Filters 
             </h1>
@@ -184,7 +201,38 @@ const Shop = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */
+
+        </ListItem>
+      </List>
+    </Box>
+  );
+
+  return (
+    <>
+    <div>
+      <Button onClick={toggleDrawer(true)}>
+      <AiFillFilter className="text-4xl text-green-600 border-[0.25px] rounded-lg border-[#dad9d9e3] p-1">
+      <p>Filter</p>  </AiFillFilter>
+      </Button>
+      <Drawer open={open} onClose={toggleDrawer(false)}>
+        {DrawerList}
+      </Drawer>
+    </div>
+    <div className="p-3">
+            <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
+            <div className="flex flex-wrap">
+              {products.length === 0 ? (
+                <Loader />
+              ) : (
+                products?.map((p) => (
+                  <div className="p-3" key={p._id}>
+                    <ProductCard p={p} />
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
     </>
   );
 };

@@ -6,6 +6,7 @@ import {
   AiOutlineLogin,
   AiOutlineUserAdd,
 } from "react-icons/ai";
+import { UserIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
@@ -84,8 +85,9 @@ export default function Navbar() {
                       className="flex  items-center font-semibold text-black focus:outline-none"
                     >
                       {userInfo ? (
-                        <span className="text-black bg-[#f0eded] p-2 hover:bg-[#c0bdbd] rounded-md text-bold absolute right-2 ">
-                          {userInfo.username}
+                        <span className="text-black   rounded-md text-bold absolute right-2 ">
+                          <UserIcon className=" p-1 bg-[#c7c7c7] rounded-full h-8 ml-[5rem]"/>
+                          {/* {userInfo.username} */}
                         </span>
                       ) : (
                         <></>

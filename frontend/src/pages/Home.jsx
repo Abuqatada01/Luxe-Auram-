@@ -23,8 +23,8 @@ const Home = () => {
         </Message>
       ) : (
         <>
-          <div className="flex justify-between items-center">
-            <h1 className="ml-[20rem] mt-[10rem] text-[4rem]">
+          <div className="flex justify-between  items-center">
+            <h1 className="ml-[20rem]   mt-[10rem] text-[4rem]">
               Special Products
             </h1>
 
@@ -37,7 +37,7 @@ const Home = () => {
           </div>
 
           <div>
-            <div className="flex justify-center flex-wrap mt-[2rem]">
+            <div className="flex justify-center xsm:w-[3rem] flex-wrap mt-[2rem]">
               {data.products.map((product,i) => (
                 <div key={product._id}>
                   <Product product={product} />

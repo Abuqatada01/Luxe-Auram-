@@ -8,7 +8,7 @@ import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card"
 
 const Product = ({ product }) => {
   return (
-    <div className="w-[30rem] ml-[2rem] p-3 relative">
+    <div className="w-[30rem] xsm:w-[17rem] xsm:m-1 xsm:p-2  ml-[2rem] p-3 relative">
       {/* <div className="relative">
         <img
           src={product.image}
@@ -53,7 +53,7 @@ const Product = ({ product }) => {
           <h2 className="flex justify-between items-center">
             <div className="text-lg p-1 pl-3">{product.name}</div> &nbsp;&nbsp;&nbsp;
             <span className="bg-green-600 text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full ">
-              $ {product.price}
+            ₹{product.price}
             </span>
           </h2> 
         </Link>

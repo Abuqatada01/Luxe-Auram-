@@ -8,13 +8,13 @@ import Sidebar from "./pages/Modern/Sidebard";
 const App = () => {
   return (
     <>
-      {/* <ToastContainer />
+      <ToastContainer />
       <Navbar/>
       <Navigation />
       <main className="py-3">
         <Outlet />
-      </main> */}
-      <Sidebar/>
+      </main>
+      {/* <Sidebar/> */}
     </>
   );
 };

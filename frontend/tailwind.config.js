@@ -11,16 +11,11 @@ export default {
    require('@tailwindcss/aspect-ratio'),],
   theme: {
     screens: {
-      'sm': '390px',
-    
-      // => @media (min-width: 576px) { ... }
-     
-      'md': ' 800px',
-      
-      // => @media (min-width: 960px) { ... }
-   
-      'lg': '1440px',
-      // => @media (min-width: 1440px) { ... }
+      xsm:'350px',
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
     },
     colors: {
       transparent: 'transparent',
