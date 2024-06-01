@@ -1,8 +1,13 @@
 "use client";
 
+<<<<<<< HEAD
+import { cn } from "@/utils/cn";
+import Image from "next/image";
+=======
 import {cn} from "../../Utils/cn"
 // import { cn } from "@/utils/cn";
 // import Image from "next/image";
+>>>>>>> c08fc10af67294d59d9b75fca9c068bedb5d3201
 import React, {
   createContext,
   useState,
