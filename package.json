@@ -22,26 +22,18 @@
     "express-async-handler": "^1.2.0",
     "express-formidable": "^1.2.0",
     "formidable": "^3.5.1",
-<<<<<<< HEAD
-    "framer-motion": "^11.1.8",
-=======
     "framer-motion": "^11.1.9",
->>>>>>> c08fc10af67294d59d9b75fca9c068bedb5d3201
     "js": "^0.1.0",
     "jsonwebtoken": "^9.0.2",
     "method-override": "^3.0.0",
     "mongodb": "^6.6.1",
     "mongoose": "^8.3.2",
     "multer": "^1.4.5-lts.1",
-<<<<<<< HEAD
-    "nodemon": "^3.1.0",
-=======
     "next": "^14.2.3",
     "nodemon": "^3.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "styled-components": "^6.1.11",
->>>>>>> c08fc10af67294d59d9b75fca9c068bedb5d3201
     "tailwind-merge": "^2.3.0"
   },
   "name": "ecommerce-mern",
@@ -51,8 +43,7 @@
   "scripts": {
     "backend": "nodemon backend/index.js",
     "frontend": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run frontend\" \"npm run backend\"
-,
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
   },
   "keywords": [],
   "author": "",
