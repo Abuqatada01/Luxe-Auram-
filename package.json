@@ -41,6 +41,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node server.js",
      "vercel-build": "npm run prepare && next build" ,
     "backend": "nodemon backend/index.js",
     "frontend": "npm run dev --prefix frontend",
