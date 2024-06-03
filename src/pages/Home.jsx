@@ -5,7 +5,6 @@ import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
 import { cn } from "../Utils/cn";
-import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
 
 
 const Home = () => {
