@@ -3,11 +3,12 @@ import HeartIcon from "./HeartIcon";
 "use client";
 
 import React from "react";
+import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card"
 // import Link from "next/link";
 
 const Product = ({ product }) => {
   return (
-    <div className="w-[30rem] xsm:w-[17rem] xsm:m-1 xsm:p-2  ml-[2rem] p-3 relative">
+    <div className="lg:w-[30rem] xsm:w-[80vw]  xsm:p-5  ml-[2rem] p-3 relative">
       {/* <div className="relative">
         <img
           src={product.image}
@@ -30,8 +31,8 @@ const Product = ({ product }) => {
 
 
 
-      <CardContainer className="inter-var h- text-black ">
-      <CardBody className="bg-[#c9c8c873] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[25rem]  h-[23rem] rounded-xl p-0 border  ">
+      <CardContainer className="inter-var xsm:w-[80vw] xsm:h-10rem lg:h-full  text-black ">
+      <CardBody className="bg-[#c9c8c873]  relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] xlg:w-[25rem] lg:w-[25rem] xsm:w-[21rem]  lg:h-[25rem] rounded-xl p-0 border  ">
         <CardItem
           translateZ="50" 
           className=" relative  text-xl font-bold text-neutral-600 text-black"
@@ -39,7 +40,7 @@ const Product = ({ product }) => {
           <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full rounded-t-lg"
+          className="w-full lg:w-[25rem] xlg:w-[25rem] xsm:w-[21rem] h-full rounded-t-lg"
         />
              <HeartIcon product={product} />
         </CardItem>

@@ -247,7 +247,7 @@ const AdminProductUpdate = () => {
               <div className="">
                 <button
                   onClick={handleSubmit}
-                  className="py-4 px-10 mt-5 rounded-lg text-lg font-bold  bg-green-600 mr-6"
+                  className="py-4 px-10 mt-5 rounded-lg text-lg font-bold  bg-pink mr-6"
                 >
                   Update
                 </button>

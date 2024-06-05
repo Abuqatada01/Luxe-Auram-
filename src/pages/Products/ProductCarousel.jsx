@@ -27,7 +27,7 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="mb-4 lg:block xl:block xl:border-black md:block ">
+    <div className="mb-4 lg:block xl:block xl:border-black md:block  xsm:block sm:block ">
       {isLoading ? null : error ? (
         <Message variant="danger">
           {error?.data?.message || error.error}
@@ -35,7 +35,7 @@ const ProductCarousel = () => {
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[50rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
+          className="xl:w-[50rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] xsm:block"
         >
           {products.map(
             ({
@@ -55,7 +55,7 @@ const ProductCarousel = () => {
                 <img
                   src={image}
                   alt={name}
-                  className="w-full rounded-t-lg object-cover h-[30rem]"
+                  className="w-full rounded-t-lg object-cover lg:h-[30rem]"
                 />
 
                 <div className=" flex justify-between rounded-b-xl bg-[#c9c8c873]">
@@ -70,29 +70,29 @@ const ProductCarousel = () => {
                   <div className="flex justify-between w-[20rem] m-4">
                     <div className="one">
                       <h1 className="flex items-center mb-6">
-                        <FaStore className="mr-2 text-white" /> Brand: {brand}
+                        <FaStore className="mr-2 text-pink" /> Brand: {brand}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaClock className="mr-2 text-white" /> Added:{" "}
+                        <FaClock className="mr-2 text-pink" /> Added:{" "}
                         {moment(createdAt).fromNow()}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Reviews:
+                        <FaStar className="mr-2 text-pink" /> Reviews:
                         {numReviews}
                       </h1>
                     </div>
 
                     <div className="two">
                       <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Ratings:{" "}
+                        <FaStar className="mr-2 text-pink" /> Ratings:{" "}
                         {Math.round(rating)}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaShoppingCart className="mr-2 text-white" /> Quantity:{" "}
+                        <FaShoppingCart className="mr-2 text-pink" /> Quantity:{" "}
                         {quantity}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaBox className="mr-2 text-white" /> In Stock:{" "}
+                        <FaBox className="mr-2 text-pink" /> In Stock:{" "}
                         {countInStock}
                       </h1>
                     </div>

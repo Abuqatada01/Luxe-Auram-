@@ -50,7 +50,7 @@ const Register = () => {
   return (
     <section className="pl-[10rem] w-full fixed flex sm:w-[5rem] sm:p-6  sm: flex-wrap">
       <div className="mr-[4rem] p-4 bg-[#f1f0f0] sm:w-[23rem] sm:p-4 rounded-lg mt-[5rem]">
-        <h1 className="text-2xl text-green-600 font-semibold mb-4">Register</h1>
+        <h1 className="text-2xl text-pink font-semibold mb-4">Register</h1>
 
         <form onSubmit={submitHandler} className="container w-[40rem]">
           <div className="my-[2rem]">
@@ -124,7 +124,7 @@ const Register = () => {
           <button
             disabled={isLoading}
             type="submit"
-            className="bg-green-600 text-white hover:bg-green-200 px-4 py-2 rounded cursor-pointer my-[1rem]"
+            className="bg-pink text-white hover:bg-pink-200 px-4 py-2 rounded cursor-pointer my-[1rem]"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
@@ -137,7 +137,7 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to={redirect ? `/login?redirect=${redirect}` : "/login"}
-              className="text-green-600 hover:underline"
+              className="text-pink hover:underline"
             >
               Login
             </Link>

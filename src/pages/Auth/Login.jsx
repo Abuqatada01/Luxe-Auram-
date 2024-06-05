@@ -41,22 +41,22 @@ const Login = () => {
 
   return (
     <div>
-      <section className="pl-[10rem] flex flex-wrap fixed">
-        <div className="mr-[4rem] mt-[5rem]">
-          <h1 className="text-2xl text-purple font-semibold mb-4">Sign In</h1>
+      <section className="lg:pl-[10rem] xsm:pl-6 flex flex-wrap fixed">
+        <div className="mr-[4rem] lg:mt-[5rem]">
+          <h1 className="text-2xl text-center text-pink font-semibold lg:mb-4">Sign In</h1>
 
           <form onSubmit={submitHandler} className="container w-[40rem]">
             <div className="my-[2rem]">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-white"
+                className="block text-sm font-semibold text-black"
               >
                 Email Address
               </label>
               <input
                 type="email"
                 id="email"
-                className="mt-1 p-2 border rounded w-full"
+                className="mt-1 p-2 border text-black border-[#d4d1d1] rounded w-full"
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -66,14 +66,14 @@ const Login = () => {
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-white"
+                className="block text-sm font-semibold text-black"
               >
                 Password
               </label>
               <input
                 type="password"
                 id="password"
-                className="mt-1 p-2 border rounded w-full"
+                className="mt-1 p-2 border text-black border-[#d4d1d1] rounded w-full"
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -83,7 +83,7 @@ const Login = () => {
             <button
               disabled={isLoading}
               type="submit"
-              className="bg-purple font-serif text-white px-4 py-2 rounded cursor-pointer my-[1rem]"
+              className="bg-pink font-serif xsm:w-[21.25rem] text-white px-4 xsm:py-2 lg:py-2 rounded-full cursor-pointer my-[1rem]"
             >
               {isLoading ? "Signing In..." : "Sign In"}
             </button>
@@ -92,7 +92,7 @@ const Login = () => {
           </form>
 
           <div className="mt-4">
-            <p className="text-white">
+            <p className="text-black">
               New Customer?{" "}
               <Link
                 to={redirect ? `/register?redirect=${redirect}` : "/register"}
@@ -106,7 +106,7 @@ const Login = () => {
         <img
           src="https://framerusercontent.com/images/NG8f00dHeU3z5pepnvq267J0RQ.jpg"
           alt=""
-          className="h-[65rem] w-[59%] xl:block md:hidden sm:hidden rounded-lg"
+          className="h-[65rem] w-[59%] xl:block md:hidden xsm:hidden rounded-lg"
         />
       </section>
     </div>

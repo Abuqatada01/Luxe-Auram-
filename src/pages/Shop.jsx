@@ -109,7 +109,7 @@ const Shop = () => {
             <h1 className="md:hidden top-3 lg:hidden sm:absolute h-[2rem] sm:left-[17rem] sm:bg-[#f1f0f0] rounded-lg p-1  w-[4rem] text-canter">
              &nbsp;Filters 
             </h1>
-            <h2 className="h4 text-center py-2 text-white bg-green-600 rounded-full mb-2">
+            <h2 className="h4 text-center py-2 text-white bg-pink rounded-full mb-2">
               Filter by Categories
             </h2>
 
@@ -135,7 +135,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 text-white bg-green-600 rounded-full mb-2">
+            <h2 className="h4 text-center py-2 text-white bg-pink rounded-full mb-2">
               Filter by Brands
             </h2>
 
@@ -153,7 +153,7 @@ const Shop = () => {
 
                     <label
                       htmlFor="pink-radio"
-                      className="ml-2 text-sm font-medium text-black bg-green-600e "
+                      className="ml-2 text-sm font-medium text-black bg-pinke "
                     >
                       {brand}
                     </label>
@@ -162,7 +162,7 @@ const Shop = () => {
               ))}
             </div>
 
-            <h2 className="h4 text-center py-2 text-white bg-green-600 rounded-full mb-2">
+            <h2 className="h4 text-center py-2 text-white bg-pink rounded-full mb-2">
               Filer by Price
             </h2>
 
@@ -219,9 +219,9 @@ const Shop = () => {
         {DrawerList}
       </Drawer>
     </div>
-    <div className="p-3">
+    <div className="p-3 flex flex-wrap justify-center">
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
-            <div className="flex flex-wrap">
+            <div className="xsm:grid  gap-x-2 gap-y-1 xsm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {products.length === 0 ? (
                 <Loader />
               ) : (

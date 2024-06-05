@@ -144,7 +144,7 @@ const UserList = () => {
                   </td>
                   <td className="px-4 py-2">
                     {user.isAdmin ? (
-                      <FaCheck style={{ color: "green" }} />
+                      <FaCheck style={{ color: "pink" }} />
                     ) : (
                       <FaTimes style={{ color: "red" }} />
                     )}

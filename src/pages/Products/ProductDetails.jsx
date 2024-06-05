@@ -104,29 +104,29 @@ const ProductDetails = () => {
               <div className="flex items-center justify-between w-[20rem]">
                 <div className="one">
                   <h1 className="flex items-center mb-6">
-                    <FaStore className="mr-2 text-green-600" /> Brand:{" "}
+                    <FaStore className="mr-2 text-pink" /> Brand:{" "}
                     {product.brand}
                   </h1>
                   <h1 className="flex items-center mb-6 w-[20rem]">
-                    <FaClock className="mr-2 text-green-600" /> Added:{" "}
+                    <FaClock className="mr-2 text-pink" /> Added:{" "}
                     {moment(product.createAt).fromNow()}
                   </h1>
                   <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-green-600" /> Reviews:{" "}
+                    <FaStar className="mr-2 text-pink" /> Reviews:{" "}
                     {product.numReviews}
                   </h1>
                 </div>
 
                 <div className="two sm:absolute sm:bottom-[44rem]">
                   <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-green-600" /> Ratings: {rating}
+                    <FaStar className="mr-2 text-pink" /> Ratings: {rating}
                   </h1>
                   <h1 className="flex items-center mb-6">
-                    <FaShoppingCart className="mr-2 text-green-600" /> Quantity:{" "}
+                    <FaShoppingCart className="mr-2 text-pink" /> Quantity:{" "}
                     {product.quantity}
                   </h1>
                   <h1 className="flex items-center mb-6 w-[10rem]">
-                    <FaBox className="mr-2 text-green-600" /> In Stock:{" "}
+                    <FaBox className="mr-2 text-pink" /> In Stock:{" "}
                     {product.countInStock}
                   </h1>
                 </div>
@@ -159,7 +159,7 @@ const ProductDetails = () => {
                 <button
                   onClick={addToCartHandler}
                   disabled={product.countInStock === 0}
-                  className="bg-green-600 text-white py-2 sm:top-10 px-4 rounded-lg mt-4 md:mt-0"
+                  className="bg-pink text-white py-2 sm:top-10 px-4 rounded-lg mt-4 md:mt-0"
                 >
                   Add To Cart
                 </button>

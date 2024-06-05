@@ -3,10 +3,11 @@ import HeartIcon from "./HeartIcon";
 "use client";
 
 import React from "react";
+import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card"
 
 const SmallProduct = ({ product }) => {
   return (
-    <div className="w-[30rem] ml-[2rem] p-3 relative">
+    <div className="w-[30rem] lg:block xsm:hidden ml-[2rem] p-3 relative">
     {/* <div className="relative">
       <img
         src={product.image}

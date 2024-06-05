@@ -54,7 +54,7 @@ const OrderList = () => {
 
                 <td className="py-2">
                   {order.isPaid ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                    <p className="p-1 text-center bg-pink-400 w-[6rem] rounded-full">
                       Completed
                     </p>
                   ) : (
@@ -66,7 +66,7 @@ const OrderList = () => {
 
                 <td className="px-2 py-2">
                   {order.isDelivered ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                    <p className="p-1 text-center bg-pink-400 w-[6rem] rounded-full">
                       Completed
                     </p>
                   ) : (
