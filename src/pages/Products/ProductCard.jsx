@@ -50,7 +50,7 @@ const ProductCard = ({ p }) => {
               currency: "INR",
             })}
           </p>
-        <section className="flex justify-between items-center">
+        <section className="flex xsm:mt-3 justify-between items-center">
           <Link
             to={`/product/${p._id}`}
             className="inline-flex items-center xsm:h-[2rem] xsm:w-[6rem] xsm:pl-2 xsm:text-[11px] lg:px-3 lg:py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-200 focus:ring-4 focus:outline-none focus:ring-pink-200 dark:bg-pink dark:hover:bg-pink dark:focus:ring-pink"

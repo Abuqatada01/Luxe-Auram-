@@ -219,7 +219,7 @@ const Shop = () => {
         {DrawerList}
       </Drawer>
     </div>
-    <div className="p-3 flex flex-wrap justify-center">
+    <div className="p-3 overflow-hidden  flex flex-wrap justify-center">
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
             <div className="xsm:grid  gap-x-2 gap-y-1 xsm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {products.length === 0 ? (

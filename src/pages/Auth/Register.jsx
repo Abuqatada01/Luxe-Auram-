@@ -48,11 +48,11 @@ const Register = () => {
   };
 
   return (
-    <section className="pl-[10rem] w-full fixed flex sm:w-[5rem] sm:p-6  sm: flex-wrap">
-      <div className="mr-[4rem] p-4 bg-[#f1f0f0] sm:w-[23rem] sm:p-4 rounded-lg mt-[5rem]">
+    <section className="lg:pl-[10rem] w-full fixed flex sm:w-[5rem] xsm:p-2  xsm:flex-wrap">
+      <div className="lg:mr-[4rem] lg;p-4  bg-[#f1f0f08f] xsm:w-[23rem] xsm:p-4 rounded-lg mt-[5rem]">
         <h1 className="text-2xl text-pink font-semibold mb-4">Register</h1>
 
-        <form onSubmit={submitHandler} className="container w-[40rem]">
+        <form onSubmit={submitHandler} className="container w-[38rem]">
           <div className="my-[2rem]">
             <label
               htmlFor="name"
@@ -137,7 +137,7 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to={redirect ? `/login?redirect=${redirect}` : "/login"}
-              className="text-pink hover:underline"
+              className="text-green-600 hover:underline"
             >
               Login
             </Link>
@@ -147,7 +147,7 @@ const Register = () => {
       <img 
         src="https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
         alt=""
-        className="h-[65rem] absolute right-0 w-[50%] xl:block md:hidden sm:hidden  rounded-lg"
+        className="h-[65rem] xsm:hidden absolute right-0 w-[50%] xl:block md:hidden sm:hidden  rounded-lg"
       />
     </section>
   );
