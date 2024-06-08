@@ -93,45 +93,45 @@ const AdminDashboard = () => {
       <AdminMenu />
 
       <section className="xl:ml-[4rem] md:ml-[0rem]">
-        <div className="w-[80%] p-4 flex justify-around flex-wrap">
-          <div className="rounded-lg bg-[#e2e1e1d7] p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-green-600 text-center p-3">
-              $
+        <div className="w-[100%] p-4 flex justify-around flex-wrap">
+          <div className="rounded-lg bg-[#e2e1e1d7] p-5 w-[22rem] mt-5">
+            <div className="font-bold rounded-full w-[3rem] bg-green-600 text-white text-center p-3">
+            ₹
             </div>
 
             <p className="mt-5">Sales</p>
             <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
+              ₹{isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
             </h1>
           </div>
-          <div className="rounded-lg bg-[#e2e1e1d7] p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-green-600 text-center p-3">
-              $
+          <div className="rounded-lg bg-[#e2e1e1d7] p-5 w-[22rem] mt-5">
+            <div className="font-bold rounded-full w-[3rem] bg-green-600 text-white text-center p-3">
+              ₹
             </div>
 
             <p className="mt-5">Customers</p>
             <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : customers?.length}
+              {isLoading ? <Loader /> : customers?.length}
             </h1>
           </div>
-          <div className="rounded-lg bg-[#e2e1e1d7]  p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-green-600 text-center p-3">
-              $
+          <div className="rounded-lg bg-[#e2e1e1d7] p-5 w-[22rem] mt-5">
+            <div className="font-bold rounded-full w-[3rem] bg-green-600 text-white text-center p-3">
+              ₹
             </div>
 
             <p className="mt-5">All Orders</p>
-            <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : orders?.totalOrders}
+            <h1 className="text-lg font-bold">
+              Orders : {isLoading ? <Loader /> : orders?.totalOrders}
             </h1>
           </div>
         </div>
 
-        <div className="ml-[10rem] mt-[4rem]">
+        <div className="lg:ml-[10rem] lg:mt-[4rem] xsm:ml-4">
           <Chart
             options={state.options}
             series={state.series}
             type="bar"
-            width="70%"
+            width="90%"
           />
         </div>
 

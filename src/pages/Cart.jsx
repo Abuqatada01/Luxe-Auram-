@@ -45,7 +45,7 @@ const Cart = () => {
                   </div>
 
                   <div className="flex-1 w-[10rem] ml-4">
-                    <Link to={`/product/${item._id}`} className="text-pink font-semibold">
+                    <Link to={`/product/${item._id}`} className="text-green font-semibold">
                       {item.name}
                     </Link>
 
@@ -96,7 +96,7 @@ const Cart = () => {
                   </div>
 
                   <button
-                    className="bg-green-600 mt-4 py-1 px-4 rounded-full text-lg w-full xsm:w-[18rem]"
+                    className="bg-green-600 text-white mt-4 py-1 px-4 rounded-full text-lg w-full xsm:w-[18rem]"
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >

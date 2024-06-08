@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import {cn} from "../../Utils/cn"
 // import { cn } from "@/utils/cn";
@@ -87,7 +87,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "lg:h-96 xsm:h-90 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
         className
       )}
     >

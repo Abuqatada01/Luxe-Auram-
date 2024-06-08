@@ -15,8 +15,8 @@ const UserOrder = () => {
       ) : error ? (
         <Message variant="danger">{error?.data?.error || error.error}</Message>
       ) : (
-        <table className="w-full">
-          <thead>
+        <table className="w-full xsm:w-[20rem]  ">
+          <thead className="xsm:hidden xsm:w-[20rem]  ">
             <tr>
               <td className="py-2">IMAGE</td>
               <td className="py-2">ID</td>
@@ -30,44 +30,48 @@ const UserOrder = () => {
 
           <tbody>
             {orders.map((order) => (
-              <tr key={order._id}>
+              <tr key={order._id} className="flex xsm:w-[22rem] xsm:mb-6  flex-wrap border-[0.5px] border-[#d4d2d285] ">
                 <img
                   src={order.orderItems[0].image}
                   alt={order.user}
-                  className="w-[6rem] mb-5"
+                  className="w-[6rem] xsm:h-[4rem] rounded-lg mb-5"
                 />
 
-                <td className="py-2">{order._id}</td>
-                <td className="py-2">{order.createdAt.substring(0, 10)}</td>
-                <td className="py-2">$ {order.totalPrice}</td>
-
-                <td className="py-2">
+                <td className="lg:py-2 xsm:mx-2"><b>OrderId :</b>  {order._id}</td>
+                <td className="py-2 xsm:mx-2"><b>Order Date  :</b> {order.createdAt.substring(0, 10)}</td>
+                <td className="py-2 xsm:mx-2"> <b>Total Price : </b> ₹{order.totalPrice}<br></br></td>
+<td className=" lg:hidden xsm:mr-[10rem]"></td>
+                <td className="py-2 border-[1px]  border-[#d4d2d285] ">
                   {order.isPaid ? (
-                    <p className="p-1 text-center bg-pink-400 w-[6rem] rounded-full">
+                    <p className="p-1 text-center bg-green-600 w-[6rem] rounded-full">
                       Completed
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                   <div>
+                    <p className="xsm:ml-2"> Payment </p> 
+                    <p className="p-1 text-center bg-red w-[6rem] rounded-full">
                       Pending
-                    </p>
+                    </p></div>
                   )}
                 </td>
 
-                <td className="px-2 py-2">
+                <td className="px-2 py-2 border-[1px] border-[#d4d2d285] ">
                   {order.isDelivered ? (
-                    <p className="p-1 text-center bg-pink-400 w-[6rem] rounded-full">
+                    <p className="p-1 text-center bg-green-500 w-[6rem] rounded-full">
                       Completed
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                    <div>
+                    <p className="xsm:ml-2"> Delivery </p> 
+                    <p className="p-1 text-center bg-red w-[6rem] rounded-full">
                       Pending
-                    </p>
+                    </p></div>
                   )}
                 </td>
 
                 <td className="px-2 py-2">
                   <Link to={`/order/${order._id}`}>
-                    <button className="bg-pink-400 text-back py-2 px-3 rounded">
+                    <button className="bg-green-500 text-white py-2 px-3 rounded">
                       View Details
                     </button>
                   </Link>

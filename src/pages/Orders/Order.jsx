@@ -92,7 +92,7 @@ const Order = () => {
   ) : error ? (
     <Messsage variant="danger">{error.data.message}</Messsage>
   ) : (
-    <div className="container flex flex-col ml-[10rem] md:flex-row">
+    <div className="container flex flex-col lg:ml-[10rem] xsm:ml-7 md:flex-row">
       <div className="md:w-2/3 pr-4">
         <div className="border gray-300 mt-5 pb-4 mb-5">
           {order.orderItems.length === 0 ? (
@@ -143,26 +143,26 @@ const Order = () => {
         <div className="mt-5 border-gray-300 pb-4 mb-4">
           <h2 className="text-xl font-bold mb-2">Shipping</h2>
           <p className="mb-4 mt-4">
-            <strong className="text-pink-600-">Order:</strong> {order._id}
+            <strong className="text-green-600">Order:</strong> {order._id}
           </p>
 
           <p className="mb-4">
-            <strong className="text-pink-600-">Name:</strong>{" "}
+            <strong className="text-green-600">Name:</strong>{" "}
             {order.user.username}
           </p>
 
           <p className="mb-4">
-            <strong className="text-pink-600-">Email:</strong> {order.user.email}
+            <strong className="text-green-600">Email:</strong> {order.user.email}
           </p>
 
           <p className="mb-4">
-            <strong className="text-pink-600">Address:</strong>{" "}
+            <strong className="text-green-600">Address:</strong>{" "}
             {order.shippingAddress.address}, {order.shippingAddress.city}{" "}
             {order.shippingAddress.postalCode}, {order.shippingAddress.country}
           </p>
 
           <p className="mb-4">
-            <strong className="text-pink-600">Method:</strong>{" "}
+            <strong className="text-green-600">Method:</strong>{" "}
             {order.paymentMethod}
           </p>
 
@@ -173,20 +173,20 @@ const Order = () => {
           )}
         </div>
 
-        <h2 className="text-xl font-bold mb-2 mt-[3rem]">Order Summary</h2>
-        <div className="flex justify-between mb-2">
+        <h2 className="text-xl font-bold lg:mb-2 lg:mt-[3rem] ">Order Summary</h2>
+        <div className="flex justify-between lg:mb-2 xsm:mb-2 xsm:mr-5">
           <span>Items</span>
           <span>$ {order.itemsPrice}</span>
         </div>
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between lg:mb-2 xsm:mb-2 xsm:mr-5">
           <span>Shipping</span>
           <span>$ {order.shippingPrice}</span>
         </div>
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between lg:mb-2 xsm:mb-2 xsm:mr-5">
           <span>Tax</span>
           <span>$ {order.taxPrice}</span>
         </div>
-        <div className="flex justify-between mb-2">
+        <div className="flex justify-between lg:mb-2 xsm:mb-2 xsm:mr-5">
           <span>Total</span>
           <span>$ {order.totalPrice}</span>
         </div>
@@ -197,7 +197,7 @@ const Order = () => {
             {isPending ? (
               <Loader />
             ) : (
-              <div>
+              <div className="lg:w-full xsm:w-[20rem] xsm:ml-1 xsm:mt-6">
                 <div>
                   <PayPalButtons
                     createOrder={createOrder}
@@ -215,7 +215,7 @@ const Order = () => {
           <div>
             <button
               type="button"
-              className="bg-pink-600-500 text-white w-full py-2"
+              className="bg-green-600 text-white w-full py-2"
               onClick={deliverHandler}
             >
               Mark As Delivered

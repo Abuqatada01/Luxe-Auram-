@@ -19,7 +19,7 @@ const OrderList = () => {
         <table className="container mx-auto">
           <AdminMenu />
 
-          <thead className="w-full border">
+          <thead className="xsm:hidden w-full border">
             <tr className="mb-[5rem]">
               <th className="text-left pl-1">ITEMS</th>
               <th className="text-left pl-1">ID</th>

@@ -24,7 +24,7 @@ const Ratings = ({ value, text, color }) => {
 };
 
 Ratings.defaultProps = {
-  color: "yellow-500",
+  color: "green-600",
 };
 
 export default Ratings;

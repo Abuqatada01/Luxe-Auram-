@@ -68,7 +68,7 @@ const ProductDetails = () => {
       <div>
         <Link
           to="/"
-          className="text-black  font-bold text-2xl hover:underline sm:ml-4 ml-[10rem]"
+          className="text-black  font-bold text-2xl hover:underline xsm:ml-4 lg:first-letter:ml-[10rem]"
         >
           Go Back
         </Link>
@@ -82,60 +82,61 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <>
-          <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem] sm:ml-[2rem]">
-            <div className="sm:pr-3">
+          <div className="flex flex-wrap relative items-between mt-[2rem] lg:ml-[10rem] ">
+            <div className="xsm:p-[1rem]  ">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full rounded-lg lg:w-[45rem] md:w-[40rem] sm:w-[25rem]    mr-[2rem]"
+                className="w-full h-full rounded-lg  lg:w-[45rem] md:w-[40rem] xsm:w-[22rem]    lg:mr-[2rem]"
               />
 
-              <HeartIcon product={product} />
+              <HeartIcon product={product} className="xsm:mt-4" />
             </div>
 
-            <div className="flex flex-col sm:p-1 sm:mt-2 justify-between">
-              <h2 className="text-3xl font-bold">{product.name}</h2>
-              <p className="my-4 xl:w-[35rem] text-xl font-semibold lg:w-[35rem] md:w-[30rem] text-[#000000]">
+            <div className="flex flex-col xsm:pl-4 xsm:mt-2 justify-between">
+              <h2 className="lg:text-3xl xsm:text-lg font-bold">{product.name}</h2>
+              <p className="my-4 xsm:mr-3 xsm:pr-4 lg:text-xl font-semibold lg:w-[35rem] md:w-[30rem] text-[#000000]">
                 {product.description}
               </p>
 
-              <p className="text-5xl my-4 font-extrabold">$ {product.price}</p>
+              <p className="lg:text-5xl my-4 font-extrabold">₹ {product.price}</p>
 
-              <div className="flex items-center justify-between w-[20rem]">
+              <div className="flex items-center xsm:flex-wrap justify-between w-[20rem]">
                 <div className="one">
                   <h1 className="flex items-center mb-6">
-                    <FaStore className="mr-2 text-pink" /> Brand:{" "}
+                    <FaStore className="mr-2 text-green-600" /> Brand:{" "}
                     {product.brand}
                   </h1>
                   <h1 className="flex items-center mb-6 w-[20rem]">
-                    <FaClock className="mr-2 text-pink" /> Added:{" "}
+                    <FaClock className="mr-2 text-green-600" /> Added:{" "}
                     {moment(product.createAt).fromNow()}
                   </h1>
                   <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-pink" /> Reviews:{" "}
+                    <FaStar className="mr-2 text-green-600" /> Reviews:{" "}
                     {product.numReviews}
                   </h1>
                 </div>
 
                 <div className="two sm:absolute sm:bottom-[44rem]">
                   <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-pink" /> Ratings: {rating}
+                    <FaStar className="mr-2 text-green-600" /> Ratings: {rating}
                   </h1>
                   <h1 className="flex items-center mb-6">
-                    <FaShoppingCart className="mr-2 text-pink" /> Quantity:{" "}
+                    <FaShoppingCart className="mr-2 text-green-600" /> Quantity:{" "}
                     {product.quantity}
                   </h1>
                   <h1 className="flex items-center mb-6 w-[10rem]">
-                    <FaBox className="mr-2 text-pink" /> In Stock:{" "}
+                    <FaBox className="mr-2 text-green-600" /> In Stock:{" "}
                     {product.countInStock}
                   </h1>
                 </div>
               </div>
 
-              <div className="flex sm:absolte sm:mt-[10rem] justify-between flex-wrap">
+              <div className="flex xsm:p-0 xsm:mr-8 justify-between flex-wrap">
                 <Ratings
                   value={product.rating}
                   text={`${product.numReviews} reviews`}
+                  className="xsm:mr-2"
                 />
 
                 {product.countInStock > 0 && (
@@ -143,7 +144,7 @@ const ProductDetails = () => {
                     <select
                       value={qty}
                       onChange={(e) => setQty(e.target.value)}
-                      className="p-2 w-[6rem] rounded-lg text-black"
+                      className="p-2 w-[6rem] rounded-lg border-[1px] text-black"
                     >
                       {[...Array(product.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -159,14 +160,14 @@ const ProductDetails = () => {
                 <button
                   onClick={addToCartHandler}
                   disabled={product.countInStock === 0}
-                  className="bg-pink text-white py-2 sm:top-10 px-4 rounded-lg mt-4 md:mt-0"
+                  className="bg-green-600 text-white py-2  px-4 rounded-lg mt-4 md:mt-0"
                 >
                   Add To Cart
                 </button>
               </div>
             </div>
 
-            <div className="mt-[5rem] sm:mt-[12rem] sm:ml-1 container flex flex-wrap items-start justify-between ml-[10rem]">
+            <div className="lg:mt-[5rem]  container flex flex-wrap items-start justify-between xsm:p-4 lg:ml-[10rem]">
               <ProductTabs
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}
