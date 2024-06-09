@@ -12,10 +12,10 @@ export default defineConfig({
 
   server: {
     proxy: {
-      // "/api/": "https://deluxeaurum.onrender.com",
-      // "/uploads/": "https://deluxeaurum.onrender.com",
-      "/api/": "http://localhost:5000",
-      "/uploads/": "http://localhost:5000",
+      "/api/": "https://watchbackend-9h6h.onrender.com",
+      "/uploads/": "https://watchbackend-9h6h.onrender.com",
+      // "/api/": "http://localhost:5000",
+      // "/uploads/": "http://localhost:5000",
     },
   },
 })

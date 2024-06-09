@@ -4,8 +4,8 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
-import { cn } from "../Utils/cn";
-import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
+// import { cn } from "../Utils/cn";
+// import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
 
 
 const Home = () => {
@@ -45,20 +45,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-          {/* <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-        
-          {data.products.map((product,i) => (
-            <BentoGridItem 
-             key={product._id}
-             product={product}
-             className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-           >
-               <div key={product._id}>
-              
-                
-                </div>
-              </BentoGridItem>   ))}
-             </BentoGrid>    <Product  /> */}
+         
         </>
       )}
      
