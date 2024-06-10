@@ -6,7 +6,10 @@ import Header from "../components/Header";
 import Product from "./Products/Product";
 
 const Home = () => {
+  // Use useParams to get the keyword from the URL
   const { keyword } = useParams();
+
+  // Fetch products data with the keyword
   const { data, isLoading, isError, error } = useGetProductsQuery({ keyword });
 
   return (
@@ -38,11 +41,16 @@ const Home = () => {
           </div>
           
           <div className="flex justify-center flex-wrap xsm:mr-[4rem] mt-[2rem]">
-            {data?.products?.map((product) => (
-              <div key={product._id}>
-                <Product product={product} />
-              </div>
-            ))}
+            {/* Ensure data and data.products are defined before mapping */}
+            {data?.products ? (
+              data.products.map((product) => (
+                <div key={product._id}>
+                  <Product product={product} />
+                </div>
+              ))
+            ) : (
+              <Message variant="info">No products found</Message>
+            )}
           </div>
         </>
       )}
