@@ -39,7 +39,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="https://watchfrontend.onrender.com/" element={<App />}>
+    <Route path="/" element={<App />}>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route index={true} path="/" element={<Home />} />
