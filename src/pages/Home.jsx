@@ -15,6 +15,10 @@ const Home = () => {
   // Safeguard: Ensure data is defined and not null
   const products = data?.products ?? [];
 
+  // Debugging logs to inspect data structure
+  console.log("data:", data);
+  console.log("products:", products);
+
   return (
     <>
       {/* Conditionally render the Header component if there's no keyword */}
@@ -45,7 +49,7 @@ const Home = () => {
           
           <div className="flex justify-center flex-wrap xsm:mr-[4rem] mt-[2rem]">
             {/* Ensure products array is defined before mapping */}
-            {products.length > 0 ? (
+            {Array.isArray(products) && products.length > 0 ? (
               products.map((product) => (
                 <div key={product._id}>
                   <Product product={product} />
