@@ -4,30 +4,31 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
-// import { cn } from "../Utils/cn";
-// import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
-
 
 const Home = () => {
   const { keyword } = useParams();
-  const { data, isLoading, isError } = useGetProductsQuery({ keyword });
+  const { data, isLoading, isError, error } = useGetProductsQuery({ keyword });
 
   return (
     <>
-{/*       {!keyword ? <Header /> : null}
+      {/* Conditionally render the Header component if there's no keyword */}
+      {!keyword && <Header />}
+      
+      {/* Handle loading state */}
       {isLoading ? (
         <Loader />
       ) : isError ? (
+        // Handle error state
         <Message variant="danger">
-          {isError?.data.message || isError.error}
+          {error?.data?.message || error?.message || "An error occurred"}
         </Message>
       ) : (
+        // Handle successful data fetching
         <>
-          <div className="flex justify-between  items-center">
+          <div className="flex justify-between items-center">
             <h1 className="lg:ml-[20rem] xsm:ml-[2rem] xsm:mr-[4rem] lg:mt-[10rem] lg:text-[4rem] xsm:text-[2rem]">
               Special Products
             </h1>
-
             <Link
               to="/shop"
               className="bg-green-600 text-white font-bold rounded-full py-2 px-10 mr-[18rem] mt-[10rem]"
@@ -35,20 +36,16 @@ const Home = () => {
               Shop
             </Link>
           </div>
-
-          <div>
+          
           <div className="flex justify-center flex-wrap xsm:mr-[4rem] mt-[2rem]">
-              {data.products.map((product,i) => (
-                <div key={product._id}>
-                  <Product product={product} />
-                </div>
-              ))}
-            </div>
-          </div> */}
-{/*         </>
-      )} */}
-         <div>hello</div>
-     
+            {data?.products?.map((product) => (
+              <div key={product._id}>
+                <Product product={product} />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };
