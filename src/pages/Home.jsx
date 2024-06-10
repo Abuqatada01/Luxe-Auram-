@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-      {!keyword ? <Header /> : null}
+{/*       {!keyword ? <Header /> : null}
       {isLoading ? (
         <Loader />
       ) : isError ? (
@@ -44,10 +44,10 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          </div>
-{/*          <div>hello</div> */}
-        </>
-      )}
+          </div> */}
+{/*         </>
+      )} */}
+         <div>hello</div>
      
     </>
   );
