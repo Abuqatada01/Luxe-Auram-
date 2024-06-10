@@ -1,23 +1,28 @@
 import { Link, useParams } from "react-router-dom";
-import { useGetProductsQuery } from "../redux/api/productApiSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
 
+// Hardcoded list of products
+const staticProducts = [
+  { _id: '1', name: 'Product 1', price: 29.99 },
+  { _id: '2', name: 'Product 2', price: 49.99 },
+  { _id: '3', name: 'Product 3', price: 19.99 },
+  // Add more products as needed
+];
+
 const Home = () => {
   // Use useParams to get the keyword from the URL
   const { keyword } = useParams();
 
-  // Fetch products data with the keyword
-  const { data, isLoading, isError, error } = useGetProductsQuery({ keyword });
+  // Since this is static, we're not loading or fetching data
+  const isLoading = false;
+  const isError = false;
+  const error = null;
 
-  // Safeguard: Ensure data is defined and not null
-  const products = data?.products ?? [];
-
-  // Debugging logs to inspect data structure
-  console.log("data:", data);
-  console.log("products:", products);
+  // Use static products list instead of fetched data
+  const products = staticProducts;
 
   return (
     <>
@@ -33,7 +38,7 @@ const Home = () => {
           {error?.data?.message || error?.message || "An error occurred"}
         </Message>
       ) : (
-        // Handle successful data fetching
+        // Handle successful data fetching (static in this case)
         <>
           <div className="flex justify-between items-center">
             <h1 className="lg:ml-[20rem] xsm:ml-[2rem] xsm:mr-[4rem] lg:mt-[10rem] lg:text-[4rem] xsm:text-[2rem]">
@@ -48,8 +53,8 @@ const Home = () => {
           </div>
           
           <div className="flex justify-center flex-wrap xsm:mr-[4rem] mt-[2rem]">
-            {/* Ensure products array is defined before mapping */}
-            {Array.isArray(products) && products.length > 0 ? (
+            {/* Render static products */}
+            {products.length > 0 ? (
               products.map((product) => (
                 <div key={product._id}>
                   <Product product={product} />
@@ -66,3 +71,4 @@ const Home = () => {
 };
 
 export default Home;
+
