@@ -12,6 +12,9 @@ const Home = () => {
   // Fetch products data with the keyword
   const { data, isLoading, isError, error } = useGetProductsQuery({ keyword });
 
+  // Safeguard: Ensure data is defined and not null
+  const products = data?.products ?? [];
+
   return (
     <>
       {/* Conditionally render the Header component if there's no keyword */}
@@ -41,9 +44,9 @@ const Home = () => {
           </div>
           
           <div className="flex justify-center flex-wrap xsm:mr-[4rem] mt-[2rem]">
-            {/* Ensure data and data.products are defined before mapping */}
-            {data?.products ? (
-              data.products.map((product) => (
+            {/* Ensure products array is defined before mapping */}
+            {products.length > 0 ? (
+              products.map((product) => (
                 <div key={product._id}>
                   <Product product={product} />
                 </div>
