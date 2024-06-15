@@ -1,107 +1,37 @@
-import { PRODUCT_URL, UPLOAD_URL } from "../constants";
-import { apiSlice } from "./apiSlice";
+// src/redux/api/productApiSlice.js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const productApiSlice = apiSlice.injectEndpoints({
-  endpoints: (builder) => ({
-    getProducts: builder.query({
-      query: ({ keyword }) => ({
-        url: `${PRODUCT_URL}`,
-        params: { keyword },
-      }),
-      keepUnusedDataFor: 5,
-      providesTags: ["Products"],
-    }),
+const API_URL = process.env.REACT_APP_API_URL || 'https://watchbackend-9h6h.onrender.com';
 
-    getProductById: builder.query({
-      query: (productId) => `${PRODUCT_URL}/${productId}`,
-      providesTags: (result, error, productId) => [
-        { type: "Product", id: productId },
-      ],
-    }),
-
-    allProducts: builder.query({
-      query: () => `${PRODUCT_URL}/allProducts`,
-    }),
-
-    getProductDetails: builder.query({
-      query: (productId) => ({
-        url: `${PRODUCT_URL}/${productId}`,
-      }),
-      keepUnusedDataFor: 5,
-    }),
-
-    createProduct: builder.mutation({
-      query: (productData) => ({
-        url: `${PRODUCT_URL}`,
-        method: "POST",
-        body: productData,
-      }),
-      invalidatesTags: ["Product"],
-    }),
-
-    updateProduct: builder.mutation({
-      query: ({ productId, formData }) => ({
-        url: `${PRODUCT_URL}/${productId}`,
-        method: "PUT",
-        body: formData,
-      }),
-    }),
-
-    uploadProductImage: builder.mutation({
-      query: (data) => ({
-        url: `${UPLOAD_URL}`,
-        method: "POST",
-        body: data,
-      }),
-    }),
-
-    deleteProduct: builder.mutation({
-      query: (productId) => ({
-        url: `${PRODUCT_URL}/${productId}`,
-        method: "DELETE",
-      }),
-      providesTags: ["Product"],
-    }),
-
-    createReview: builder.mutation({
-      query: (data) => ({
-        url: `${PRODUCT_URL}/${data.productId}/reviews`,
-        method: "POST",
-        body: data,
-      }),
-    }),
-
-    getTopProducts: builder.query({
-      query: () => `${PRODUCT_URL}/top`,
-      keepUnusedDataFor: 5,
-    }),
-
-    getNewProducts: builder.query({
-      query: () => `${PRODUCT_URL}/new`,
-      keepUnusedDataFor: 5,
-    }),
-
-    getFilteredProducts: builder.query({
-      query: ({ checked, radio }) => ({
-        url: `${PRODUCT_URL}/filtered-products`,
-        method: "POST",
-        body: { checked, radio },
-      }),
-    }),
-  }),
+// Async thunk to fetch products
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
+  const response = await axios.get(`${API_URL}/api/products`);
+  return response.data;
 });
 
-export const {
-  useGetProductByIdQuery,
-  useGetProductsQuery,
-  useGetProductDetailsQuery,
-  useAllProductsQuery,
-  useCreateProductMutation,
-  useUpdateProductMutation,
-  useDeleteProductMutation,
-  useCreateReviewMutation,
-  useGetTopProductsQuery,
-  useGetNewProductsQuery,
-  useUploadProductImageMutation,
-  useGetFilteredProductsQuery,
-} = productApiSlice;
+const productApiSlice = createSlice({
+  name: 'products',
+  initialState: {
+    products: [],
+    status: 'idle',
+    error: null,
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.products = action.payload;
+      })
+      .addCase(fetchProducts.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
+});
+
+export default productApiSlice.reducer;
